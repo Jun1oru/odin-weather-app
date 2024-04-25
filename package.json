@@ -1,7 +1,7 @@
 {
-  "name": "template-repository",
-  "version": "1.0.3",
-  "description": "template repository",
+  "name": "odin-weather-app",
+  "version": "1.0.0",
+  "description": "odin-weather-app",
   "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
