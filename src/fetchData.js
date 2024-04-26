@@ -5,7 +5,7 @@ export async function fetchData(location) {
     }
 
     const response = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=MY_KEY_BRO&q=${location}`,
+      `https://api.weatherapi.com/v1/forecast.json?key=MY_KEY_BRO&q=${location}&days=3`,
       { mode: "cors" },
     );
 
@@ -14,6 +14,8 @@ export async function fetchData(location) {
     }
 
     const data = await response.json();
+    console.log(data);
+    // - Uncomment when u want to see how to process more data
     return data;
   } catch (error) {
     console.error("Error: ", error);

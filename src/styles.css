@@ -1,0 +1,131 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+@media only screen and (min-width: 35.5em) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 48em) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 64em) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 80em) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 120em) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 160em) {
+    html {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (min-width: 240em) {
+    html {
+        font-size: 24px;
+    }
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+#weatherDiv {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(10rem, 1fr));
+    grid-template-rows: repeat(2, minmax(10rem, 1fr));
+}
+
+#currentWeatherDiv,
+#tomorrowWeatherDiv,
+#overmorrowWeatherDiv {
+    font-size: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#currentWeatherDiv {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+#tomorrowWeatherDiv {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+#overmorrowWeatherDiv {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.weatherTitle {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.weatherCondition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#locationWeatherDiv {
+    grid-column: span 3;
+    grid-row: 2 / 3;
+
+    display: flex;
+    justify-content: center;
+}
+
+#weatherLocation {
+    font-size: 1.2rem;
+}
+
+#formDiv {
+    flex: 1;
+}
+
+#locationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#locationInput, #formButton {
+    border-radius: 10rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
