@@ -7,7 +7,7 @@ export function updateWeatherDom(data) {
 
   const temperature = document.querySelectorAll(".weatherTemperature");
   temperature.forEach((elem, index) => {
-    elem.textContent = `Temperature in C: ${data.temperature.temp_c[index]}`;
+    elem.textContent = `Average Temperature: ${data.temperature.temp_c[index]} \u00B0C`;
   });
 
   const condition = document.querySelectorAll(".weatherCondition");
@@ -24,19 +24,19 @@ export function createWeatherDiv() {
   const div = document.createElement("div");
   div.id = "weatherDiv";
 
-  div.appendChild(createCurrentWeatherDiv());
+  div.appendChild(createTodayWeatherDiv());
   div.appendChild(createTomorrowWeatherDiv());
   div.appendChild(createOvermorrowWeatherDiv());
   div.appendChild(createLocationWeatherDiv());
   return div;
 }
 
-function createCurrentWeatherDiv() {
+function createTodayWeatherDiv() {
   const div = document.createElement("div");
-  div.id = "currentWeatherDiv";
+  div.id = "todayWeatherDiv";
 
   const weatherTitle = document.createElement("p");
-  weatherTitle.textContent = "Current Weather";
+  weatherTitle.textContent = "Today Weather";
   weatherTitle.classList.add("weatherTitle");
 
   const temperature = document.createElement("p");
@@ -47,12 +47,12 @@ function createCurrentWeatherDiv() {
   condition.classList.add("weatherCondition");
 
   const conditionText = document.createElement("p");
-  conditionText.textContent = "Current Condition";
+  conditionText.textContent = "Today Condition";
   conditionText.classList.add("conditionText");
 
   const conditionImg = document.createElement("img");
   conditionImg.src = "";
-  conditionImg.alt = "Current Condition Img";
+  conditionImg.alt = "Today Condition Img";
   conditionImg.classList.add("conditionImg");
 
   condition.appendChild(conditionText);

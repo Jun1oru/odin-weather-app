@@ -1,3 +1,5 @@
+import { config } from "./config";
+
 export async function fetchData(location) {
   try {
     if (!location) {
@@ -5,7 +7,7 @@ export async function fetchData(location) {
     }
 
     const response = await fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=MY_KEY_BRO&q=${location}&days=3`,
+      `https://api.weatherapi.com/v1/forecast.json?key=${config.API_KEY}&q=${location}&days=3`,
       { mode: "cors" },
     );
 
